@@ -1,0 +1,72 @@
+{% extends 'base.html' %} {% block head %}
+
+<title>Search Page</title>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/style.css') }}"
+/>
+{% endblock %} {% block body %}
+<div class="content">
+  <h1 style="text-align: center">Predict the chance of having Diabetes</h1>
+  <form action="/predict" method="POST">
+    <div class="mb-3">
+      <input
+        type="number"
+        name="number_of_times_pregnant"
+        id="number_of_times_pregnant"
+        placeholder="number_of_times_pregnant (0-17)"
+        class="form-control mb-2"
+      /><input
+        type="number"
+        name="plasma_glucose_concentration"
+        id="plasma_glucose_concentration"
+        placeholder="plasma_glucose_concentration(60-200)"
+        class="form-control mb-2"
+      />
+      <input
+        class="form-control mb-2"
+        type="number"
+        name="diastolic_blood_pressure"
+        id="diastolic_blood_pressure"
+        placeholder="diastolic_blood_pressure(50-120)"
+      />
+      <input
+        class="form-control mb-2"
+        type="number"
+        name="triceps_skinfold_thickness"
+        id="triceps_skinfold_thickness"
+        placeholder="triceps_skinfold_thickness(10-50)"
+      />
+      <input
+        class="form-control mb-2"
+        type="number"
+        name="serum_insulin"
+        id="serum_insulin"
+        placeholder="serum_insulin(5-230)"
+      />
+      <input
+        class="form-control mb-2"
+        type="float"
+        name="body_mass_index"
+        id="body_mass_index"
+        placeholder="body_mass_index(20-50)"
+      />
+      <input
+        class="form-control mb-2"
+        type="float"
+        name="diabetes_pedigree_function"
+        id="diabetes_pedigree_function"
+        placeholder="diabetes_pedigree_function(0.02-1.6)"
+      />
+      <input
+        type="number"
+        class="form-control mb-2"
+        name="age"
+        id="age"
+        placeholder="age(20-80)"
+      />
+      <input type="submit" value="Predict" class="btn btn-primary" />
+    </div>
+  </form>
+</div>
+{% endblock %}
